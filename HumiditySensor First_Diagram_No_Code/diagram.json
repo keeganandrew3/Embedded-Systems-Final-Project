@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": "Zachary Devine",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -57, "left": -135, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 86.7,
+      "left": 263.4,
+      "attrs": { "humidity": "65" }
+    },
+    { "type": "wokwi-rgb-led", "id": "rgb1", "top": -24.8, "left": -229.3, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -255.25,
+      "left": -86.4,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -236.05,
+      "left": -86.4,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -216.85,
+      "left": -86.4,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "dht1:VCC", "uno:5V", "orange", [ "v9.6", "h-249.6", "v-57.6" ] ],
+    [ "dht1:SDA", "uno:2", "violet", [ "v-297.6", "h-182.3" ] ],
+    [ "dht1:GND", "uno:GND.3", "black", [ "v28.8", "h-268.8" ] ],
+    [ "rgb1:R", "r3:1", "red", [ "v0", "h-19.2", "v-220.8" ] ],
+    [ "r3:2", "uno:6", "red", [ "v0", "h75.6" ] ],
+    [ "rgb1:G", "r2:1", "green", [ "v9.6", "h49.3", "v-259.2" ] ],
+    [ "r2:2", "uno:5", "green", [ "v0", "h94.8" ] ],
+    [ "rgb1:B", "r1:1", "blue", [ "v0", "h30.4", "v-268.8" ] ],
+    [ "r1:2", "uno:3", "blue", [ "v0", "h123.6" ] ]
+  ],
+  "dependencies": {}
+}
